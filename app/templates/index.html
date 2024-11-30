@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ігор</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Каталог ігор</h1>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/add-game/">Додати гру</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Список доступних ігор</h2>
+        <ul class="game-list">
+            {% for game in games %}
+            <li>
+                <strong>{{ game.title }}</strong>
+                <span class="price">{{ game.price }} грн</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        Магазин ігор &copy; 2024
+    </footer>
+</body>
+</html>
+

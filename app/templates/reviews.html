@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Відгуки про {{ game.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Відгуки про {{ game.title }}</h1>
+    <ul>
+        {% for review in game.reviews %}
+        <li><strong>{{ review.reviewer }}:</strong> {{ review.text }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Додати відгук</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.reviewer.label }}<br>
+        {{ form.reviewer(size=30) }}<br><br>
+        {{ form.text.label }}<br>
+        {{ form.text(cols=40, rows=5) }}<br><br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

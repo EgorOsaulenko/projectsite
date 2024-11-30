@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог ігор</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Каталог ігор</h1>
+    <ul>
+        {% for game in games %}
+        <li>
+            {{ game.title }} - {{ game.price }} грн
+            <a href="/games/{{ game.id }}/reviews/">Відгуки</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/add-game/">Додати нову гру</a>
+</body>
+</html>

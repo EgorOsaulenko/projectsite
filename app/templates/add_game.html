@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додати гру</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Додати нову гру</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}<br>
+        {{ form.title(size=30) }}<br><br>
+        {{ form.price.label }}<br>
+        {{ form.price(step=0.01) }}<br><br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
